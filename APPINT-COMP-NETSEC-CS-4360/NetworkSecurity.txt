@@ -1,0 +1,149 @@
+Tuesday, August 27, 2019 
+Install Security Onion
+In this class everything is "a computer"
+Server - Anything that offers a service  ( dns, router, dhcp)
+Cloud - Someone else's computer
+
+Website Browse
+1. DNS resolve the website to an address
+2. Agree security protocol
+3. Ask for the main website.
+
+Malware
+AMD - Advance Malware Detection
+HYBRID Analysis
+- Watch what the machine does with the given file
+
+Tuesday , September 3 , 2019
+(late)
+Network Tack
+------------
+7. Application
+6. Presentation 
+5. Session
+4. Transport 
+3. Network
+2. Data
+1. Physical 
+
+DNS
+---
+Type A Record - Maps a name to an IP address
+CNAME -points to another name rather than a ip
+DNS works from back to front - start at . then com the etc
+How do we find who owns things?
+-SOA Start of Authority 
+dig @8.8.8.8 -t NS com , the guys who have the root dns servers
+- should not be query these servers directly 
+AAAA (quad a record) - Ipv6 address record
+MX (mail exchange)  - email records
+in mx records the lower the number the higher the priorty
+
+PTR Records, give an ip an name 
+    lookup is reverse  right to left
+SPF -  email who is allowed to send email from this guy (txt record)
+txt records - not used often
+DNS Man in the middle - redirect traffic 
+DNS CACHE poisoning 
+
+
+    
+Week 3
+Tuesday Sept, 10 2019
+IP addresses and net mask
+/32 is the hostmask
+Lowest IP is the netwrok ip addres / identifier 
+( not usable as it defined the network)
+( highest is also not usable as it is the broadcast address)
+
+zero trust networking.
+
+Firewalls:
+Oldest -> newest
+* Port filter FW- 
+In port and out port are described.
+* Stateful FW-
+any -> dns server 53 
+It remembers what port it came from and allows the connection
+back to that port.
+* Pack inspection FW
+If a packet does not look like a expected protocol it will drop the packet.
+* Application lvl FW
+Deeper inspection and can act as a proxy.
+* nextGen 
+Does the same as the above but no proxying. 
+
+iptables
+
+least required , monitor everything
+
+
+
+Week 4
+Tuesday September 17 2019
+base 64 is an encoding to transfer data
+Exposer to the INTERNET
+Web services.
+    - Where to store on premises or remote?
+    - web server / mail server want as little setup on each server.
+        - mail server not on domain
+        - set firewall.
+        - smallest possible foot-print
+Email.
+    - who can listen to email?
+    - how do we know email came from said location? SPF record
+    - dmark - if an email fails, send it here
+    - talosintelligence.com,
+    - set lowest priority honey pot.
+Web Browsing-
+    - Proxies
+
+Cloud services
+    - Other computers
+    - also restrict access
+ARRIN and other services.
+
+
+WEb Browser,
+Email,
+Remote Access
+cloud service
+
+7/24/2019
+First virus - creeper, av was reaper
+First worm - Moris / cuckoos egg
+Stages of virus:
+    Get in
+    Dig in and spread
+    Call back with boss
+    wait and for commands
+
+Control channel:
+http  over web request.
+
+NSM - Network Security Monitoring
+
+Stages:
+Initial - enter
+embed - on the computer
+ppropigate
+c2
+exfil - data export thru web
+
+Monitor every interface on the network firewalls
+
+Network Tap - duplicate traffic to IDS
+1. Prism refraction
+2. 2 way mirror
+3. At a bend
+-
+Try to stop this at all points
+
+Stop connections to from new domains
+
+10/01/2019.
+Monitoring
+Turn on logging
+splunk
+
+
